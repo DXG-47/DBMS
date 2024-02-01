@@ -1,0 +1,7 @@
+a) delete from table_name where Experience>30;
+b) select manager.ename, count(associate.empno) from manager, associate
+where associate.mgr=manager.empno
+group by manager.ename having count(associate.empno)=
+(select max(count(associate.empno)) from manager, associate
+where manager.empno=associate.mgr group by manager.ename
+c) create view view_name as select employee_name,manager from table_name;
